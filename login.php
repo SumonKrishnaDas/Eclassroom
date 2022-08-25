@@ -15,8 +15,8 @@ require 'includes/form_handlers/login_handler.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    
+    <title>LogIn</title>
+
     <!-- Bootstrap 5 CDN-Import: -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     
@@ -24,11 +24,11 @@ require 'includes/form_handlers/login_handler.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Light-Theming: -->
-    <!-- <link rel="stylesheet" href="asset/css/style.css"> -->
+    <link id="mainStyle" rel="stylesheet" href="asset/css/style.css">
 
     <!-- Dark-Theming: -->
     <!-- Uncomment the line below to use dark theming. Don't forget to comment the line above.-->
-    <link rel="stylesheet" href="asset/css/style_dark.css">
+    <!-- <link rel="stylesheet" href="asset/css/style_dark.css"> -->
     <!-- this also works automatically by clicking the theme_button. -->
 </head>
 <body>
@@ -96,7 +96,7 @@ require 'includes/form_handlers/login_handler.php';
     <button id="theme_button" class="btn btn-theme" onclick="onThemeChange()">
         <i id="theme_icon" class="fas fa-moon"></i>
 
-        
+
     </button>
 
 
