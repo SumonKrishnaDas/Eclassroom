@@ -27,57 +27,85 @@ include("includes/classes/Post.php");
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>EC</title>
 
+	 <!-- Bootstrap 5 CDN-Import: -->
+	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 	<!-- css -->
 	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-		
+	
+	  <!-- Light-Theming: -->
+    <link id="mainStyle" rel="stylesheet" href="asset/css/style.css">
+
+    <!-- Dark-Theming: -->
+    <!-- Uncomment the line below to use dark theming. Don't forget to comment the line above.-->
+    <!-- <link rel="stylesheet" href="asset/css/style_dark.css"> -->
+    <!-- this also works automatically by clicking the theme_button. -->
+	  
 </head>
 
 <body>
   
-  
-	<div>
-		<div class=>
-			<a href="index.php" style="text-decoration: none"><i class="fa fa-chalkboard"></i> EClassroom</a>
-		</div>
-             <div>
-			<nav>
-						<?php 
-							//Unread notifications 
-							$notifications = new User2($con, $userLoggedIn);
-							$num_notifications = $notifications->getUnreadNumber();
-						?>
 
-					<a href="<?php echo $userLoggedIn; ?>">
-									<?php echo $user['first_name'] ?>
-									<span>Profile</span>
-					</a>
+	<nav class ="navbar  navbar-expand-lg  navbar-dark bg-success p-3">`	
 
 
-					<a href="index.php">   <i class="fas fa-home"></i>
-							<span>Home</span>
-							</a>
-					
-							<!-- <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'notification')"><i class="fas fa-bell"></i>  
-								<?php
-								if($num_notifications > 0)
-								echo '<span class="notification_badge" id="unread_notification">' . $num_notifications . '</span>';
-								?>
-							<span class="tooltiptext">Notifications</span>
-							</a> -->
-					<a href="createJoinClass.php"><i class="fas fa-plus"></i>
-							<span class=>Create or Join Class</span>
-							</a>
-							<a href="includes/handlers/logout.php">
-							<i class="fas fa-power-off"></i>
-							<span class=>Logout</span>
-							</a>
 
-				</nav>
-				
-				</div>
-			
-			</div>
+
+<div class="container-fluid">
+
+
+<a href="index.php"  class=  " text-white nav-link mx-2 active " ><i class="fa fa-chalkboard"></i> EClassroom</a>
+		
+
+
+
+
+<div class="collapse  navbar-collapse"    ">
+
+<ul class="navbar-nav ms-auto"  >  
+	<li class="nav-item">
+	<a href="index.php" class="nav-link mx-2 active"        >   <i class="fas fa-home"></i>
+			<span>Home</span>
+			</a>
+	
+
+
+	</li>
+
+	<li class="nav-item">
+	<a href="createJoinClass.php" class="nav-link mx-2 active " ><i class="fas fa-plus"></i>
+			<span class=>Create or Join Class</span>
+			</a>
+	</li>
+
+	<li class ="nav-item ">
+	<a href="<?php echo $userLoggedIn; ?> "  class="nav-link mx-2 active "      >
+					<?php echo $user['first_name'] ?>
+					<span>Profile</span>
+	</a>
+	</li>
+
+
+<li class="nav-item"       >
+<a href="includes/handlers/logout.php" class="nav-link mx-2 active "       >
+			<i class="fas fa-power-off"></i>
+			<span class=>Logout</span>
+			</a>
+</li>
+
+
+</ul>
+
+</div>
+
+</div>
+
+	</nav>
+
+	<script src="dark.js"></script>
+</body>
 	
 
 	

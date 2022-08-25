@@ -57,7 +57,7 @@ require 'includes/form_handlers/createJoinClass_handler.php';
 		     		 </form>
              </div>
              
-             <div id="second">
+             <div id="second"> 
                     <div class="joinClass_header">
                         <h1>Join class</h1>
                     </div>
