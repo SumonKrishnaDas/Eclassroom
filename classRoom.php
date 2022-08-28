@@ -112,25 +112,44 @@ if(isset($_POST['search__btn'])){
 }
 ?>
 
-<div class=Wrapper2>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link id="mainstyle" rel="stylesheet" type="text/css" href="asset\css\s.css">
+
+</head>
+<body>
 
 
-    <div class="user_details cloumn">
-        <center><h1> <i class="fa fa-chalkboard-teacher"></i> <?php echo $courseName ?></h1></center>
-        <p style='line-height:30px; display: inline-block;'><b>Section:</b> <?php echo $sec ?>
+
+
+
+
+
+<div class="Wrapper2">
+
+
+    <div class="user_details  cloumn">
+        <center><h1 class="classroom-text"> <i class="fa fa-chalkboard-teacher"></i> <?php echo $courseName ?></h1></center>
+
+        <p style='line-height:30px; display: inline-block;'class='classroom-text'><b>Section:</b> <?php echo $sec ?>
             <br>
-            <b>Class Code:</b> <?php echo $classCode ?><span id="code_expand"><i class="fas fa-expand-arrows-alt"></i></span>
+            <b class="comment-text">Class Code:</b> <?php echo "<h6 style=display:inline-block; class='classroom-text'> $classCode </h6>"?><span id="code_expand"><i class="fas fa-expand-arrows-alt"></i></span>
         </p>
         <form action="" method="POST" class="search__form">
                 <input type="text" placeholder='Search posts' autocomplete='off'  id='search-bar' name='searched_text'><button id="search__btn" name="search__btn"><i class="fas fa-search"></i></button>
         </form> 
         <div class="assignment_box">
-            <a href="#" id="postBtn"><i class="fab fa-megaport" style='margin-right: 5px;'></i>Post</a>
+            <a href="#" id="postBtn" style=" text-decoration:none" ><i class="fab fa-megaport" style='margin-right: 5px;'></i>Post</a>
             
-            <a href="#" id="assignmentBtn"><i class="far fa-file-word" style='margin-right: 5px;'></i>Assignment Section</a>
-            <?php  if(isset($_POST['upload'])) {
-             echo'<span class="assgn-Btn_notification_badge" id="unread_notification"></span>';   
-            }?>
+            <a href="#" id="assignmentBtn" style=" text-decoration:none"     ><i class="far fa-file-word" style='margin-right: 5px;'></i>Assignment Section</a>
+
         </div>
     </div>
 
@@ -153,30 +172,31 @@ if(isset($_POST['search__btn'])){
     </div>
 
     <div class="people_column">
-       <h4>Instructor:</h4><a href="<?php echo $teacherName; ?>"><img src='<?php echo $teacherDetails['profilePic'] ?>' width='40'><?php echo $teacherDetails['first_name'] . " " . $teacherDetails['last_name'] ?></a>
+       <h4 class='classroom-text'>Teacher:</h4><a href="<?php echo "<h6 class='classroom-text' style=' text-decoration:none'> $teacherName</h6>"; ?>"><img src='<?php echo $teacherDetails['profilePic'] ?>' width='40'><?php echo $teacherDetails['first_name'] . " " . $teacherDetails['last_name'] ?></a>
         <br>
-        <!-- <?php echo "Posts: " . $user_array['num_posts'] . "<br>"; ?> -->
-        <!-- <?php 
+         <!-- <?php echo "Posts: " . $user_array['num_posts'] . "<br>"; ?>  -->
+             <!-- <?php 
         $stundentsName  = new User($con, $classCode ,$userLoggedIn);
         echo "<p><b>Class Members: </b></p>"; ?>
              <?php $stundentsName=implode(', ',$array);
-             echo $stundentsName; ?>  -->
+             echo  "<h6 class='classroom-text'> $stundentsName</h6>";?>   -->
 
     <?php 
         $stundentsName  = new User($con, $classCode ,$userLoggedIn);
-        echo "<p><b>Class Members:</b> </p>"; ?>
+        echo "<p class='class-text'><b>Class Members:</b> </p>"; ?>
              <?php $stundentsName->getStudentsInfo($classID); ?>
     </div>
 
     <div class="main_column">
         <div id="first">
             <form class="post_form" method="POST">
-                <textarea name='post_text' id='post_text_area' placeholder='Share something...'></textarea>
+                <textarea name='post_text' id='post_text_area' placeholder='Share something...' class="classroom-text" ></textarea>
                 <input type='submit' name='post' id='post_button' value='post'>
-                
-            </form>
+                </form>
 
-            <?php
+           
+           
+           <?php
             $post = new Post($con, $userLoggedIn, $classCode);
             $post->loadPosts();
             ?>
@@ -185,7 +205,7 @@ if(isset($_POST['search__btn'])){
         <div id="second">
             <form class="assignment_form" method="POST" enctype="multipart/form-data">
                 <input type="file" name="file" id="fileToUpload">
-                <textarea name='assignment_text' id='assignment-textarea' placeholder='Type here'></textarea>
+                <textarea name='assignment_text' id='assignment-textarea' placeholder='Type here'   class='classroom-text'></textarea>
                 <a href='classRoom.php?classCode=$courseCode'><input type='submit' name='upload' id='assignment-upload-button' value='Upload'></a>
                 <hr>
             </form>
@@ -274,6 +294,20 @@ if(isset($_POST['search__btn'])){
     
     
 </script>
-</body>
 
-</html> 
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+

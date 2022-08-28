@@ -87,7 +87,7 @@ if(isset($_POST['register_button']))
 
        $query = mysqli_query($con, "INSERT INTO users VALUES ('', '$fname', '$lname', '$username', '$em', '$password', '$profile_pic', '$date','no','','','')");
 
-       array_push($error_array, "<span style = 'color: #14C800;'> You're all set! Goahead and login! </span> <br>");
+       array_push($error_array, " You're all set! Goahead and login!  <br>");
 
        //Clear session variabel
        $_SESSION['reg_fname'] = "";

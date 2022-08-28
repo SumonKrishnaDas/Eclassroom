@@ -4,11 +4,6 @@ require 'config/config.php';
 require 'includes/form_handlers/register_handler.php';
 require 'includes/form_handlers/login_handler.php';
 ?>
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +26,9 @@ require 'includes/form_handlers/login_handler.php';
     <!-- <link rel="stylesheet" href="asset/css/style_dark.css"> -->
     <!-- this also works automatically by clicking the theme_button. -->
 </head>
+
+
+
 <body>
 
     <div class="page-content d-flex align-items-center">
@@ -57,15 +55,17 @@ require 'includes/form_handlers/login_handler.php';
 
                     <!-- Login-Form-->
                     
-                        <form action="register.php" method="POST">
+                        <form action="login.php" method="POST">
 
                         <div class="mb-2 mt-5">
                             
-                            <input type="email" name="log_email"    class="form-control auth-input"  placeholder="Email address" value="<?php 
+                            <input type="email" name="log_email"    class="form-control auth-input"  placeholder="Email address"
+                             value="<?php 
                                                                             if (isset($_SESSION['log_email'])) {
                                                                                 echo $_SESSION['log_email'];
                                                                             }
-                                                                            ?>" required>
+                                                                            ?>"
+                                                                             required>
     
                           
                         </div>
@@ -75,11 +75,11 @@ require 'includes/form_handlers/login_handler.php';
                         <div class="mb-3">
                         
                             <input type="password" name="log_password"class="form-control auth-input"   placeholder="Password">
-    <br>
-    <?php if (in_array("Email or password was incorrect<br>", $error_array)) echo "<span style='color:red; font-size:0.78rem;'>Email or password was incorrect<br><br></span>"; ?>
-    
-                        </div>
 
+</div>
+<br>
+                 
+<?php if (in_array("Email or password was incorrect<br>", $error_array)) echo "<span style='color:red; font-size:0.78rem;'>Email or  password was incorrect<br><br></span>"; ?>
                         
                         <input type="submit" name="login_button" id="button" value="Login" class="btn auth-btn mt-2 mb-4">
 

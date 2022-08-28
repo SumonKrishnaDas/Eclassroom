@@ -42,6 +42,22 @@ include("includes/classes/Post.php");
     <!-- Uncomment the line below to use dark theming. Don't forget to comment the line above.-->
     <!-- <link rel="stylesheet" href="asset/css/style_dark.css"> -->
     <!-- this also works automatically by clicking the theme_button. -->
+	<!-- javaScripts -->
+
+
+	<!-- javaScripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+			<script src="assets\js\createJoinClass.js"></script>
+			<script src="assets/js/demo.js"></script>
+			<script src="assets/js/jquery.jcrop.js"></script>
+	    <script src="assets/js/jcrop_bits.js"></script>
+
+	<!-- css -->
+	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="asset\css\style.css">
+		<link rel="shortcut icon" type="image/png" href="assets/images/background/graduation.png">
+		<link rel="stylesheet" href="assets/css/jquery.Jcrop.css" >
+
 	  
 </head>
 
@@ -69,9 +85,6 @@ include("includes/classes/Post.php");
 	<a href="index.php" class="nav-link mx-2 active"        >   <i class="fas fa-home"></i>
 			<span>Home</span>
 			</a>
-	
-
-
 	</li>
 
 	<li class="nav-item">

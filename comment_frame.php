@@ -2,7 +2,7 @@
 
 <head>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="assets\css\styling.css">
+    <link rel="stylesheet" type="text/css" href="asset\css\style.css">
 </head>
 
 <body>

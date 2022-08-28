@@ -57,17 +57,23 @@ require 'includes/form_handlers/login_handler.php';
 
                         <div class="mb-2 ">
                             
-
-                            <input type="text" class ="form-control auth-input   " name="reg_fname" placeholder="First name" value="<?php 
+                        
+                            <input type="text" class ="form-control auth-input" name="reg_fname" placeholder="First name"
+                             
+                             value="<?php 
                             if (isset($_SESSION['reg_fname'])) {
                                 echo $_SESSION['reg_fname'];
-                            } ?>" required>
+                            } ?>"
+
+
+                             required>
 
 
 
                         </div>
 
                         <div class="mb-2 ">
+                        
                             <input type="text" class="form-control auth-input"        name="reg_lname" placeholder="Last name" value="<?php 
                                                                         if (isset($_SESSION['reg_lname'])) {
                                                                             echo $_SESSION['reg_lname'];
@@ -95,16 +101,15 @@ if (isset($_SESSION['reg_email'])) {
                             if (isset($_SESSION['reg_email2'])) {
                                 echo $_SESSION['reg_email2'];
                             } ?>" required>
+ 
+
+<?php if (in_array("Email already in use<br>", $error_array)) echo "<span style = 'color: #14C800;'> Email already in use</span> <br>";
+else if (in_array("Invalid email format<br>", $error_array)) echo "<span style = 'color: #14C800;'> Invalid email format </span> <br>";
+else if (in_array("Email do not match<br>", $error_array)) echo "<span style = 'color: #14C800;'> Email don't match </span> <br>" ; ?>
+ </div>
 
 
-                        </div>
-
-
-                        
-
-
-
-                        <div class="mb-2">
+                           <div class="mb-2">
                             <input type="password" class="form-control auth-input"  name="reg_password" placeholder="Password" required>
                            
                            </div>
@@ -119,16 +124,18 @@ if (isset($_SESSION['reg_email'])) {
 
                         </div>
 
-                        <?php if (in_array("Your password do not match<br>", $error_array)) echo "Your password do not match<br>"; ?>
+                        <?php if (in_array("Your password do not match<br>", $error_array)) echo "<span style = 'color: #14C800;'> You're Password don't match</span> <br>"; ?>
 
-                  
+                        <?php if (in_array(" You're all set! Goahead and login!  <br>"  , $error_array)) echo "<span style = 'color: #14C800;'> You're all set! Go ahead and login! </span> <br>"; ?>
 
                         <input type="submit" name="register_button" id="button" value="Register" class="btn auth-btn mt-2 mb-4">
     <br>
     <br>
-    <?php if (in_array("<span style = 'color: #14C800;'> You're all set! Go ahead and login! </span> <br>", $error_array)) echo "<span style = 'color: #14C800;'> You're all set! Go ahead and login! </span> <br>"; ?>
+                    
 
-                    </form>
+                    
+
+</form>
 
                     <p class="text mb-4">Allredy have Account? <a   href="login.php" class="text-link">Sign in</a></p>
 

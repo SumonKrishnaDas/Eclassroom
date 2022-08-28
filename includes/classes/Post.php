@@ -451,11 +451,10 @@ public function loadTeachingClasses()
 			$str .= "<div class='classBox'>
 									
 								
-								<a href = 'classRoom.php?classCode=$code'> <h3>$className </h3></a> 
-								Section: $section
-								<br>
-								$subject
-								<br>
+								<a href = 'classRoom.php?classCode=$code'   class='box-text'> <h3>$className </h3></a> 
+								<h6  class='box-text'>Section: $section</h6>
+				
+								<h6  class='box-text'> $subject </h6>
 								<p> $delete_teachingClass </p>
 				        </div> ";
 		}
@@ -483,13 +482,13 @@ public function loadEnrolledClasses()
 			$subject = $row['subject'];
 			$code = $row['courseCode'];
 
-			$delete_EnrolledClass = "<a href='includes/form_handlers/delete_post.php?Enrolled_Student=$this->user&amp;classCode=$code'><input type='button' id='delete_class_btn' value='Leave'></a>";
+			$delete_EnrolledClass = "<a href='includes/form_handlers/delete_post.php?Enrolled_Student=$this->user&amp;classCode=$code'><input type='button' class='delete ' id='delete_class_btn' value='Leave'></a>";
 			$str .= "<div class='EnrolledclassBox'>
-					   <a href = 'classRoom.php?classCode=$code'> <h3>$className </h3></a>
-					   Section: $section
-					   <br>
-					   $subject
-					   <br>
+					   <a href = 'classRoom.php?classCode=$code'class='box-text'> <h3 class='box-text'>$className </h3></a>
+					   <h6 class='box-text'> Section: $section</h6>
+					
+					   <h6 class=box-text>$subject</h6>
+					   
 					   <p> $delete_EnrolledClass </p>
 					   </a>
 				</div> ";
